@@ -5,6 +5,10 @@ import Contact from "./pages/Contact";
 import { Navbar } from "./components/Navbar";
 import ProductDetail from "./pages/ProductDetail";
 import { ProductList } from "./pages/ProductList";
+import Profile from "./pages/Profile";
+import ProfileInfo from "./pages/ProfileInfo";
+import Order from "./pages/Order";
+import Setting from "./pages/Setting";
 
 function App() {
   return (
@@ -16,6 +20,11 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/Products" element={<ProductList />} />
         <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="/profile/*" element={<Profile />}>
+          <Route path="info" element={<ProfileInfo />} />
+          <Route path="orders" element={<Order />} />
+          <Route path="settings" element={<Setting />} />
+        </Route>
       </Routes>
     </Router>
   );
